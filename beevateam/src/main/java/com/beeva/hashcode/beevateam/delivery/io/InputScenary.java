@@ -114,6 +114,50 @@ public class InputScenary {
 
     }
 
+    public int getRows() {
+        return rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
+    public int getNumeroDrones() {
+        return numeroDrones;
+    }
+
+    public int getTurns() {
+        return turns;
+    }
+
+    public int getMaxWeigh() {
+        return maxWeigh;
+    }
+
+    public int getNumOrders() {
+        return numOrders;
+    }
+
+    public List<Order> getListOrders() {
+        return listOrders;
+    }
+
+    public int getNumWarehouses() {
+        return numWarehouses;
+    }
+
+    public List<Warehouse> getListWarehouses() {
+        return listWarehouses;
+    }
+
+    public int getNumTypeProducts() {
+        return numTypeProducts;
+    }
+
+    public Map<Integer, Integer> getMapTypeProductWeigh() {
+        return mapTypeProductWeigh;
+    }
+
     @Override
     public String toString() {
         return "InputScenary{" +
@@ -123,7 +167,7 @@ public class InputScenary {
                 ", turns=" + turns +
                 ", maxWeigh=" + maxWeigh +
                 ", numTypeProducts=" + numTypeProducts +
-                ", listProducts=" + listProducts +
+
                 '}';
     }
 }
