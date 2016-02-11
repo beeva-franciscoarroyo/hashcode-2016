@@ -6,7 +6,7 @@ public class App {
 
     public static void main( String[] args ){
         String pathStaticFiles = "src/static/scenaries/";
-        String busyDay = pathStaticFiles + "busy_day.in";
+        String busyDay = pathStaticFiles + "sample.in";
 
         InputScenary inputScenary = new InputScenary(busyDay);
         System.out.println(inputScenary.toString());
