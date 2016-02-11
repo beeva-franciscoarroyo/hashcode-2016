@@ -2,14 +2,12 @@ package com.beeva.hashcode.beevateam.delivery.io;
 
 import com.beeva.hashcode.beevateam.model.Order;
 import com.beeva.hashcode.beevateam.model.Point;
-import com.beeva.hashcode.beevateam.model.Product;
 import com.beeva.hashcode.beevateam.model.Warehouse;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,12 +21,15 @@ public class InputScenary {
     int numeroDrones;
     int turns;
     int maxWeigh;
-    List<Order> listOrders;
-    List<Warehouse> listWarehouses;
-    List<Product> listProducts;
-    int numTypeProducts;
-    int numWarehouses;
+
     int numOrders;
+    List<Order> listOrders;
+
+    int numWarehouses;
+    List<Warehouse> listWarehouses;
+
+    int numTypeProducts;
+    Map<Integer, Integer> mapTypeProductWeigh;
 
 
     public InputScenary(String pathFileName) {
@@ -50,6 +51,7 @@ public class InputScenary {
             this.numTypeProducts = Integer.valueOf(secondLine);
 
             // Tercera linea
+            /*
             listProducts = new ArrayList<>();
             String thirdLine = br.readLine();
             String[] types = thirdLine.split(" ");
@@ -57,7 +59,7 @@ public class InputScenary {
                 Product p = new Product(i, Integer.valueOf(types[i]));
                 listProducts.add(p);
             }
-
+/*
             // Cuarta
             String fourthLine = br.readLine();
             this.numWarehouses = Integer.valueOf(fourthLine);
@@ -103,7 +105,7 @@ public class InputScenary {
                 }
 
             }
-
+*/
 
         } catch (IOException e) {
             e.printStackTrace();

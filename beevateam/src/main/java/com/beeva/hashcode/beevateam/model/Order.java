@@ -1,6 +1,8 @@
 package com.beeva.hashcode.beevateam.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by escabia on 11/02/16.
@@ -10,13 +12,13 @@ public class Order {
     int id;
     Point destino;
     int items;
-    List<Product> listTypes;
+    Map<Integer, Integer> mapTypeProductItems = new HashMap<>();
 
-    public Order(int id, Point destino, int items, List<Product> listTypes) {
+    public Order(int id, Point destino, int items, Map<Integer, Integer> mapTypeProductItems) {
         this.id = id;
         this.destino = destino;
         this.items = items;
-        this.listTypes = listTypes;
+        this.mapTypeProductItems = mapTypeProductItems;
     }
 
     public int getId() {
@@ -43,11 +45,11 @@ public class Order {
         this.items = items;
     }
 
-    public List<Product> getListTypes() {
-        return listTypes;
+    public Map<Integer, Integer> getMapTypeProductItems() {
+        return mapTypeProductItems;
     }
 
-    public void setListTypes(List<Product> listTypes) {
-        this.listTypes = listTypes;
+    public void setMapTypeProductItems(Map<Integer, Integer> mapTypeProductItems) {
+        this.mapTypeProductItems = mapTypeProductItems;
     }
 }
