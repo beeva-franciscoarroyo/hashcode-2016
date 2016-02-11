@@ -7,12 +7,20 @@ import java.util.List;
  */
 public class Warehouse {
 
+    int id;
     Point location;
-    List<Type> listTypes;
 
-    public Warehouse(Point location, List<Type> listTypes) {
+    public Warehouse(int id, Point location) {
+        this.id = id;
         this.location = location;
-        this.listTypes = listTypes;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Point getLocation() {
@@ -23,11 +31,5 @@ public class Warehouse {
         this.location = location;
     }
 
-    public List<Type> getListTypes() {
-        return listTypes;
-    }
 
-    public void setListTypes(List<Type> listTypes) {
-        this.listTypes = listTypes;
-    }
 }

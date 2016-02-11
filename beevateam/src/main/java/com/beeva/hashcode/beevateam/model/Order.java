@@ -10,9 +10,9 @@ public class Order {
     int id;
     Point destino;
     int items;
-    List<Type> listTypes;
+    List<Product> listTypes;
 
-    public Order(int id, Point destino, int items, List<Type> listTypes) {
+    public Order(int id, Point destino, int items, List<Product> listTypes) {
         this.id = id;
         this.destino = destino;
         this.items = items;
@@ -43,11 +43,11 @@ public class Order {
         this.items = items;
     }
 
-    public List<Type> getListTypes() {
+    public List<Product> getListTypes() {
         return listTypes;
     }
 
-    public void setListTypes(List<Type> listTypes) {
+    public void setListTypes(List<Product> listTypes) {
         this.listTypes = listTypes;
     }
 }
