@@ -13,6 +13,11 @@ public class Warehouse {
     Point location;
     Map<Integer, Integer> mapTypeProductItems = new HashMap<>();
 
+    public Warehouse(int id, Point location) {
+        this.id = id;
+        this.location = location;
+    }
+
     public Warehouse(int id, Point location, Map<Integer, Integer> mapTypeProductItems) {
         this.id = id;
         this.location = location;
@@ -41,5 +46,14 @@ public class Warehouse {
 
     public void setMapTypeProductItems(Map<Integer, Integer> mapTypeProductItems) {
         this.mapTypeProductItems = mapTypeProductItems;
+    }
+
+    @Override
+    public String toString() {
+        return "Warehouse{" +
+                "id=" + id +
+                ", location=" + location +
+                ", mapTypeProductItems=" + mapTypeProductItems +
+                '}';
     }
 }

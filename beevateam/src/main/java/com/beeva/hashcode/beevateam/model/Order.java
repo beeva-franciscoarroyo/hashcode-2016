@@ -14,6 +14,11 @@ public class Order {
     int items;
     Map<Integer, Integer> mapTypeProductItems = new HashMap<>();
 
+    public Order(int id, Point destino) {
+        this.id = id;
+        this.destino = destino;
+    }
+
     public Order(int id, Point destino, int items, Map<Integer, Integer> mapTypeProductItems) {
         this.id = id;
         this.destino = destino;
@@ -51,5 +56,15 @@ public class Order {
 
     public void setMapTypeProductItems(Map<Integer, Integer> mapTypeProductItems) {
         this.mapTypeProductItems = mapTypeProductItems;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", destino=" + destino +
+                ", items=" + items +
+                ", mapTypeProductItems=" + mapTypeProductItems +
+                '}';
     }
 }

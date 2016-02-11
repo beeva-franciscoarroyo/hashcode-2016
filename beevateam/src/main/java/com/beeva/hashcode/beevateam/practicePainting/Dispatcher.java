@@ -27,7 +27,7 @@ public class Dispatcher {
 
     private void calculate(int droneActual, int orderActual, List<Order> orders, List<Warehouse> listWarehouses) {
 
-        
+
 
 
     }
