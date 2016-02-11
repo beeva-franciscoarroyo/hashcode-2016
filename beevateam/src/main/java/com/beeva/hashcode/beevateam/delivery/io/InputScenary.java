@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -51,45 +52,42 @@ public class InputScenary {
             this.numTypeProducts = Integer.valueOf(secondLine);
 
             // Tercera linea
-            /*
-            listProducts = new ArrayList<>();
+            mapTypeProductWeigh = new HashMap<>();
             String thirdLine = br.readLine();
             String[] types = thirdLine.split(" ");
             for(int i=0; i<numTypeProducts; i++){
-                Product p = new Product(i, Integer.valueOf(types[i]));
-                listProducts.add(p);
+                mapTypeProductWeigh.put(i,Integer.valueOf(types[i]));
             }
-/*
-            // Cuarta
+
+            // Warehouses
             String fourthLine = br.readLine();
             this.numWarehouses = Integer.valueOf(fourthLine);
 
-
-            // Warehouses
+            listWarehouses = new ArrayList<>();
             for(int i=0; i<numWarehouses;i++){
                 String line = br.readLine();
                 String[] locationsWarehouse = line.split(" ");
-                Warehouse w = new Warehouse(i, new Point(Integer.valueOf(locationsWarehouse[0]),Integer.valueOf(locationsWarehouse[0])));
+                Warehouse w = new Warehouse(i, new Point(Integer.valueOf(locationsWarehouse[0]),Integer.valueOf(locationsWarehouse[1])));
                 listWarehouses.add(w);
 
                 String line2 = br.readLine();
                 String[] storeProductsinWarehouse = line2.split(" ");
-                for(int j=0; j<listProducts.size(); j++){
-                    listProducts.get(j).updateMapWH(i,Integer.valueOf(storeProductsinWarehouse[j]));
+                for(int j=0; j<numTypeProducts; j++){
+                    listWarehouses.get(i).getMapTypeProductItems().put(j,Integer.valueOf(storeProductsinWarehouse[j]));
                 }
 
             }
-
 
             // Orders
             String fithLine = br.readLine();
             this.numOrders = Integer.valueOf(fithLine);
 
-            // Orders
+            listOrders = new ArrayList<>();
+
             for(int i=0; i<numOrders;i++){
                 String line = br.readLine();
                 String[] locationsOrders = line.split(" ");
-                Order o = new Order(i, new Point(Integer.valueOf(locationsOrders[0]),Integer.valueOf(locationsOrders[1]));
+                Order o = new Order(i, new Point(Integer.valueOf(locationsOrders[0]),Integer.valueOf(locationsOrders[1])));
                 listOrders.add(o);
 
 
@@ -99,13 +97,9 @@ public class InputScenary {
                 String line3 = br.readLine();
                 String[] storeProductsOrder = line3.split(" ");
                 for(int j=0; j<o.getItems(); j++){
-
-
-                    //listProducts.get(j).updateMapWH(i,Integer.valueOf(storeProductsinWarehouse[j]) );
+                    listOrders.get(i).getMapTypeProductItems().put(j,Integer.valueOf(storeProductsOrder[j]));
                 }
-
             }
-*/
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -122,8 +116,12 @@ public class InputScenary {
                 ", numeroDrones=" + numeroDrones +
                 ", turns=" + turns +
                 ", maxWeigh=" + maxWeigh +
+                ", numOrders=" + numOrders +
+                ", listOrders=" + listOrders +
+                ", numWarehouses=" + numWarehouses +
+                ", listWarehouses=" + listWarehouses +
                 ", numTypeProducts=" + numTypeProducts +
-                ", listProducts=" + listProducts +
+                ", mapTypeProductWeigh=" + mapTypeProductWeigh +
                 '}';
     }
 }
